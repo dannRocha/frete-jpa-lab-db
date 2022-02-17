@@ -7,6 +7,6 @@ import lombok.Setter;
 @Embeddable
 @Getter
 @Setter
-public class DIstancia {
+public class Distancia {
   private Long quilometros;
 }

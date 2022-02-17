@@ -38,4 +38,9 @@ public class Frete {
   @OneToMany(mappedBy = "frete")
   private Set<ItemFrete> itensFrete;
 
+  @Embedded
+  private Parametro parametro;
+
+  @ManyToOne
+  private Veiculo veiculo;
 }

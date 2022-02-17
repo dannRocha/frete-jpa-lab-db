@@ -17,14 +17,12 @@ public class Cidade {
   private String nome;
   private String estado;
 
-
   @OneToMany(mappedBy = "cidadeDeOrigem")
-  private Set<Frete> fretesSaida;
+  private Set<Frete> fretesOrigem;
 
   @OneToMany(mappedBy = "cidadeDeDestino")
-  private Set<Frete> fretesEntrada;
-
+  private Set<Frete> fretesSaida;
 
   @Embedded
-  private DIstancia dIstancia;
+  private Distancia distancia;
 }
