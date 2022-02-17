@@ -11,5 +11,6 @@ import java.util.Set;
 @DiscriminatorValue("cliente")
 public final class Cliente extends PessoaFisica {
   @OneToMany(mappedBy = "cliente")
+
   private Set<Frete> fretes;
 }

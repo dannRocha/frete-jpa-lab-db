@@ -1,16 +1,22 @@
 package frete.entity;
 
-import jakarta.persistence.DiscriminatorValue;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Set;
+
 @Entity
-@DiscriminatorValue("generico")
+@Table(name = "tipo_veiculo")
 @Getter
 @Setter
-public final class TipoVeiculo extends Veiculo {
+public final class TipoVeiculo {
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
   private String descricao;
   private Integer pesoMaximo;
+
+  @OneToMany(mappedBy = "tipoVeiculo")
+  private Set<Veiculo> veiculos;
 }
